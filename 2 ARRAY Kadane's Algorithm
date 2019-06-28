@@ -1,0 +1,91 @@
+#include<iostream>
+using namespace std;
+int main()
+ {
+	
+long long	int t;
+cin>>t;
+while(t--)
+{
+    long long int size;
+    cin>>size;
+    long long int *arr;
+    arr=new long long int[size];
+    
+    for(int i=0;i<size;i++)
+    cin>>arr[i];
+    long long int sofar_sum=0;
+    long long int now_sum=0;
+    //incase all postive=enitre array all negative just find maximum element
+    
+    bool pos[2];
+    pos[0]=false;
+    pos[1]=false;
+    for(long long int i=0;i<size;i++)
+    {
+        if(arr[i]>0)
+        pos[0]=true;
+        else if(arr[i]<0)
+        pos[1]=true;
+        
+    }
+    
+    if(pos[0]==true && pos[1]==true)
+    {
+        
+        for(long long int i=0;i<size;i++)
+    {
+       now_sum+=arr[i];
+       
+       if(sofar_sum<now_sum)
+       {
+           sofar_sum=now_sum;
+           
+       }
+       if(now_sum<0)
+       {
+           now_sum=0;
+           
+       }
+       
+        
+        
+    }
+    
+    if(sofar_sum==0)
+    cout<<"-1"<<endl;
+    else
+    cout<<sofar_sum<<endl;
+    
+    }
+        
+
+    else if(pos[0]==true && pos[1]==false)
+    {
+        long long int sum=0;
+        for(long long int i=0;i<size;i++)
+        sum+=arr[i];
+          
+        cout<<sum<<endl;
+    }
+    else if(pos[0]==false && pos[1]==true)
+    {
+        long long int max=arr[0];
+        
+         for(long long int i=1;i<size;i++)
+        {
+            if(max<arr[i])
+            {
+                max=arr[i];
+            }
+            
+        }
+        cout<<max<<endl;
+    }
+    
+    
+}
+	
+	
+	return 0;
+}
