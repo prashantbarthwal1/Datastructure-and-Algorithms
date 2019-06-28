@@ -1,0 +1,71 @@
+#include<iostream>
+using namespace std;
+int main()
+ {
+	long long int t;
+	cin>>t;
+	while(t)
+	{
+	     int size,value;
+	     cin>>size;
+	     cin>>value;
+	     int *arr;
+	     arr=new int[size];
+	     for(int i=0;i<size;i++)
+	     cin>>arr[i];
+	 
+	 int header=0,sum=0,flag=0; 
+	 int start=0,end=0;
+   //sliding window algorithm
+for(int i=0;i<size;i++)
+{
+    
+    
+     
+     sum+=arr[i];
+     
+    
+     
+     while(sum>value)
+     {
+         sum-=arr[header];
+         header++;
+     }
+     if(sum==value)
+    {
+        flag=1;
+        start=header+1;
+        end=i+1;
+        break;
+    }
+      
+      
+}	     
+	     
+	     
+	     
+	    
+	
+	    
+	    
+	    if(flag==1)
+	    {
+	        
+	        cout<<start<<" "<<end<<endl;
+	    }
+	    else
+	    {
+	        
+	        cout<<"-1"<<endl;
+	    }
+	    
+	    t--; 
+	}
+	
+	
+	
+	
+	
+	
+	return 0;
+}
