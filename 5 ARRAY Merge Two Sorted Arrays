@@ -1,0 +1,59 @@
+#include<iostream>
+using namespace std;
+int main()
+ {
+	long long int t;
+	cin>>t;
+	while(t--)
+	{
+	    long long int size1;
+	    long long int size2;
+	    
+	    cin>>size1;
+	    cin>>size2;
+	    long long int *arr1;
+	    arr1=new long long int[size1];
+	    
+	    
+	    long long int *arr2;
+	    arr2=new long long int[size2];
+	    
+	    for(int i=0;i<size1;i++)
+	    cin>>arr1[i];
+	    
+	    for(int i=0;i<size2;i++)
+	    cin>>arr2[i];
+	    long long int arr1_start=0,arr2_start=0;
+	    
+	    
+	    for(int i=0;i<size1+size2;i++)
+	    {
+	        if(arr1_start<size1 && arr2_start<size2)
+	        {
+	            if(arr1[arr1_start]<=arr2[arr2_start])
+	             cout<<arr1[arr1_start++]<<" ";
+	           else if(arr1[arr1_start]>arr2[arr2_start])
+	             cout<<arr2[arr2_start++]<<" ";
+	                 
+	            
+	        }
+	        else if(arr1_start>=size1)
+	        {
+	            cout<<arr2[arr2_start++]<<" ";
+	        }
+	        else if(arr2_start>=size2)
+	        {
+	            cout<<arr1[arr1_start++]<<" ";
+	        }
+	        
+	        
+	    }
+	    
+	    
+	    cout<<endl;
+	    
+	    
+	}
+	
+	return 0;
+}
