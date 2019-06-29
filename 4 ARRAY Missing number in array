@@ -1,0 +1,37 @@
+//https://practice.geeksforgeeks.org/problems/missing-number-in-array/0
+#include<iostream>
+using namespace std;
+int main()
+ {
+   long long int t;
+   cin>>t;
+   while(t--)
+   {
+      long long int size;
+      cin>>size;
+      long long int *arr;
+      arr=new long long int[size];
+      
+      long long int sum=0;
+      for(int i=0;i<size-1;i++)
+      {
+      cin>>arr[i];
+      
+      sum+=arr[i];
+      
+      }
+      
+      
+      
+      long long int Value=size*(size+1)/2;
+      long long int requiredValue=Value-sum;
+      cout<<requiredValue<<endl;
+       
+       
+   }
+
+
+
+
+	return 0;
+}
