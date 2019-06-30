@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+int main()
+ {
+   long long int t;
+   cin>>t;
+   while(t--)
+   {
+       long long int size;
+       cin>>size;
+       long long int *arr;
+       arr=new long long int[size];
+       for(int i=0;i<size;i++)
+       cin>>arr[i];
+       
+       long long int left_sum=0;
+       long long int right_sum=0;
+       
+        for(long long int i=0;i<size;i++)
+         right_sum+=arr[i];
+         long long int flag =-1;
+       
+       for(long long int i=0;i<size;i++)
+       {
+           if(i>0)
+           {
+               left_sum+=arr[i-1];
+           }
+           right_sum-=arr[i];
+           
+           if(left_sum==right_sum)
+           {
+               flag=i+1;
+               break;
+               
+           }
+           
+       }
+       
+       
+       
+     cout<<flag<<endl;  
+       
+   }
+    
+
+
+
+	return 0;
+}
