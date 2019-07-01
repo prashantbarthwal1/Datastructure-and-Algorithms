@@ -1,0 +1,12 @@
+//char to int
+
+char a='3';
+
+int value=a-'0';
+
+
+//int to char
+int a=3;
+
+char value=a+'0'
+
