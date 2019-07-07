@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+int main()
+ {
+	long long int n;
+	cin>>n;
+	while(n--)
+	{
+	    string p;
+	    cin>>p;
+	    long long int size=p.length();
+	     long long int start=p.length()-1;
+	    string new1;
+	  while(start>=0)
+	  {
+	      if(p[start]=='.')
+	      {
+	          
+	          
+	          for(long long int i=start+1;i<size;i++)
+	          {
+	              new1+=p[i];
+	              
+	          }
+	          new1+='.';
+	          size=start;
+	          
+	          
+	          
+	      }
+	      else if(start==0)
+	      {
+	           
+	          for(long long int i=start;i<size;i++)
+	          {
+	              new1+=p[i];
+	              
+	          }
+	         
+	          
+	          
+	      }
+	      
+	      
+	      start--;
+	  }
+	    
+	    
+	    cout<<new1<<endl;
+	    
+	}
+	
+	return 0;
+}
