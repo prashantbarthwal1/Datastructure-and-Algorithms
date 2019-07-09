@@ -1,0 +1,108 @@
+#include<iostream>
+using namespace std;
+int main()
+ {
+     int t;
+     cin>>t;
+     while(t--)
+     {
+         
+         string norm,rot;
+         
+         cin>>norm>>rot;
+         
+         bool antiC=true;
+         bool C=true;
+         
+         
+         int size1=norm.length();
+         int size2=rot.length();
+         if(size1==size2)
+         {
+             for(int i=0;i<size1;i++)
+             {
+                 int val;
+                 if(i-2<0)
+                 {
+                      val=i-2+size1;
+                     if(norm[i]!=rot[val])
+                     {
+                         antiC=false;
+                         break;
+                     }
+                     
+                 }
+                 else
+                 {
+                     val=i-2;
+                      if(norm[i]!=rot[val])
+                     {
+                         antiC=false;
+                         break;
+                     }
+                     
+                 }
+                 
+                 
+             }
+            
+             
+             if(antiC==false)
+             {
+             
+             for(int i=0;i<size1;i++)
+             {
+                 int val;
+                 if(i+2>size1-1)
+                 {
+                      val=(i+2)%size1;
+                     if(norm[i]!=rot[val])
+                     {
+                         C=false;
+                         break;
+                     }
+                     
+                 }
+                 else
+                 {
+                     val=i+2;
+                      if(norm[i]!=rot[val])
+                     {
+                         C=false;
+                         break;
+                     }
+                     
+                 }
+                 
+                 
+             }
+            
+             
+             
+             
+             }
+             
+             
+             
+             
+             
+             
+             
+             
+         }
+         
+         
+         
+         if(antiC==true||C==true)
+         cout<<"1"<<endl;
+         else
+         cout<<"0"<<endl;
+         
+         
+         
+     }
+     
+     
+
+	return 0;
+}
