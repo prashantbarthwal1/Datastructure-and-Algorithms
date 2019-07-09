@@ -1,0 +1,57 @@
+//HERE TO ITERATE IN STRING ITERATOR IS USED  since IT CAN HANDLE CASES WHERE STRING IS OF SIZE LIKE 10^16 LENGTH
+//TRY TO USE ITERATOR
+
+#include<iostream>
+using namespace std;
+int main()
+ {
+     int t;
+     cin>>t;
+     while(t--)
+     {
+         string str,strAna;
+         cin>>str>>strAna;
+         
+         int arr[26]={0};
+       
+         for(auto  it=str.cbegin();it!=str.cend();++it)
+         {
+             arr[(*it)-97]++;
+             
+         }
+         
+         for(auto  it=strAna.cbegin();it!=strAna.cend();++it)
+         {
+             arr[(*it)-97]--;
+             
+         }
+         bool flag=true;
+          for(int i=0;i<26;i++)
+         {
+            if(arr[i]!=0)
+            {
+                flag=false;
+                break;
+            }
+             
+         }
+         if(!flag)
+         {
+             cout<<"NO"<<endl;
+         }
+         else
+         {
+             
+cout<<"YES"<<endl;
+         }
+         
+         
+         
+     }
+     
+	
+	
+	
+	
+	return 0;
+}
