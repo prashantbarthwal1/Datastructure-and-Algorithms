@@ -1,0 +1,131 @@
+//THIS CODE WILL WORK IF WE KNOW WE WILL NOT BE GIVEN A INVALID ROMAN NUMBER FOR DETAIL EXPLAINATION CHECK OUT COMMENT below the code
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+ {
+	int t;
+	cin>>t;
+	unordered_map<char, int> romanS; 
+	romanS['I']=1;
+	romanS['V']=5;
+	romanS['X']=10;
+	romanS['L']=50;
+	romanS['C']=100;
+	romanS['D']=500;
+	romanS['M']=1000;
+	
+	while(t--)
+	{
+	    string roman;
+	    cin>>roman;
+	    int size=roman.length();
+	    
+	    int prev=romanS.at(roman[size-1]);
+	    int number=prev;
+	    for(int j=size-2;j>=0;j--)
+	    {
+	        
+	        if(romanS.at(roman[j])>=prev)
+	        {
+	            number+=romanS.at(roman[j]);
+	            prev=romanS.at(roman[j]);
+	            
+	        }
+	        else
+	        {
+	            number-=romanS.at(roman[j]);
+	            prev=romanS.at(roman[j]);
+	            
+	        }
+	        
+	        
+	        
+	        
+	    }
+	    
+	    
+	    
+	    
+	   
+	    cout<<number<<endl;
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	}
+	return 0;
+}
+
+
+
+
+/*
+ http://romannumerals.info/roman-numeral-converter/
+
+If you liked the Roman Numeral Converter, you might be also interested to learn how to write numbers in roman numerals and also how to read roman numerals. You can try doing so by following the tips below:
+
+First take note of the fact that roman numerals are written by using by letters from the alphabet:
+
+I=1
+
+V=5
+
+X=10
+
+L=50
+
+C=100
+
+D=500
+
+M=1000
+
+There are 4 intrinsic rules of reading and writing roman numerals
+1. A letter repeats its worth or value that many times (III= 3, XX= 20, C = 100, etc.). A letter can only be repeated up to three times consecutively.
+
+2. If a letter or more of lower value is placed after a letter of greater value, add the value of the lower value letter or letters to the one with the higher value.
+
+VII = 6 (5 + 2 = 7)
+
+LXXX = 70 (50 + 10 + 10 + 10 = 80)
+
+MC = 1100 (1000 + 100 = 1100)
+
+3. If a letter of lower value is placed before a letter of greater value, subtract that amount.
+
+IV = 4 (5 – 1 = 4)
+
+XC = 90 (100 – 10 = 90)
+
+There are several rules applicable for subtracting values or amounts from a roman numeral:
+
+a. Only powers of ten can be subtracted or deducted (C, X, or I, but not L or V)
+
+For 45, do NOT write it as VL (50 – 5).
+
+DO write it as XLV (XL + V or 40 + 5)
+
+b. Only one roman number can be subtracted from another roman number.
+
+For 8, do NOT write it as IIX (10 – 1 – 1 = 8).
+
+DO write it as VIII (V + I + I + I or 5 + 3 = 8)
+
+c. Do not subtract a roman number from one roman number that is more than 10 times greater it’s value (you can subtract 1 from 10 [IX] but not 1 from 20)
+
+For 99, do NOT write it as IC (C – I or 100 – 1 = 99).
+
+DO write it as XCIX (XC + IX or 90 + 9)
+
+4. A bar which is on top of a letter or a string of letters increases the number’s value by a thousand times or 1,000 times.
+
+You may choose to learn reading and writing roman numerals or you may choose to use our free online Roman Numeral Converter. You may also use our Roman Numeral Converter to test yourself when learning to read and write roman numbers.
+
+*/
+
+
+
