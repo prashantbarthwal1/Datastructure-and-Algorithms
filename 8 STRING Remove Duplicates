@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+int main()
+ {
+int t;
+cin>>t; 
+cin.ignore(numeric_limits<streamsize>::max(),'\n');//used to clear input buffer
+                                                       //as after int input, getline creates problem
+
+while(t--)
+{
+    int arr[26]={0};
+    string s;
+       
+    getline(cin,s);
+  
+    for(auto it=s.cbegin();it!=s.cend();++it)
+    {
+        if(arr[(*it)-97]>=0 && arr[(*it)-97]<=25)
+        arr[(*it)-97]++;
+        
+        
+    }
+
+    string p;
+    bool secondL=true;
+      for(auto it=s.cbegin();it!=s.cend();++it)
+    {
+        
+        if(arr[(*it)-97]!=0 && (*it)!=' ' )
+        {
+            p+=(*it);
+            
+            arr[(*it)-97]=0;
+           
+        }
+        else if((*it)==' ' && secondL==true)
+        {
+            p+=(*it);
+            secondL=false;
+        }
+        
+                     
+
+        
+        
+    }
+    
+    
+    cout<<p<<endl;
+    
+  
+    
+}
+	return 0;
+}
